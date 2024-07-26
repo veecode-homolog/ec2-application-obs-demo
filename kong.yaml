@@ -95,13 +95,12 @@ proxy:
     enabled: true
     servicePort: 443
   type: LoadBalancer
-
-# serviceMonitor:
-#   enabled: "true"
-#   interval: 30s
-#   labels:
-#     release: prometheus-stack
-#   namespace: vkpr
-#   scrapeTimeout: 30s
-#   targetLabels:
-#   - prometheus-stack
+serviceMonitor:
+  enabled: true
+  namespace: vkpr
+  interval: 30s
+  scrapeTimeout: 30s
+  labels:
+    release: prometheus-stack 
+  targetLabels: 
+    - prometheus-stack
